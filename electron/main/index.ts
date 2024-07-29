@@ -22,6 +22,8 @@ process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL ? path.join(process.env.APP_ROOT, 
 
 async function createWindow() {
   win = new BrowserWindow({
+    width: 1200,
+    height: 800,
     title: "Main window",
     webPreferences: {
       preload: preload,
@@ -37,7 +39,7 @@ async function createWindow() {
     // 开发环境
     win.loadURL(VITE_DEV_SERVER_URL);
     // 开发环境控制面板
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools();
   } else {
     win.loadFile(indexHtml);
   }
