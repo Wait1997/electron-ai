@@ -12,6 +12,19 @@ export default defineConfig(({ command }) => {
     resolve: {
       alias: { "@": resolve(__dirname, "src") },
     },
+    css: {
+      modules: {
+        localsConvention: "camelCaseOnly", // 将生成的类名转换为驼峰命名
+        // 如果不想用 .module.less 文件扩展名，你可以通过配置来自动处理 .less 文件
+      },
+      // 预处理器选项的配置对象
+      preprocessorOptions: {
+        less: {
+          // // 支持 Less 中的 JavaScript 代码
+          javascriptEnabled: true,
+        },
+      },
+    },
     plugins: [
       react(),
       electron({
@@ -42,7 +55,7 @@ export default defineConfig(({ command }) => {
         },
         // 为渲染进程填充 Electron 和 Node.js API
         // 如果要在渲染进程中使用 Node.js，则需要在主进程中启用 `nodeIntegration`
-        // renderer: {},
+        renderer: {},
       }),
     ],
   };
