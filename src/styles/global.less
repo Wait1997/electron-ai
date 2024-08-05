@@ -1,0 +1,28 @@
+@tailwind base; /* Preflight will be injected here */
+@tailwind components;
+@tailwind utilities;
+
+.light {
+  --theme: light;
+  --white: #fff;
+  --color: #333;
+  --bgColor-default: #fff;
+}
+
+.dark {
+  --theme: dark;
+  --white: rgb(30, 30, 30);
+  --color: #fefefe;
+  --bgColor-default: #0d1117;
+}
+
+:root {
+  .light()
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    .dark();
+  }
+}
+
