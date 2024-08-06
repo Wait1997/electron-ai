@@ -7,7 +7,7 @@
     "dev": "vite --mode dev",
     "build": "tsc -b && vite build --mode prod && electron-builder",
     "preview": "vite preview --mode prod",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint:render": "eslint --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
     "antd": "^5.20.0",
